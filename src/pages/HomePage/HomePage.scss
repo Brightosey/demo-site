@@ -1,0 +1,311 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/margin" as *;
+@use "../../Styles/variables" as *;
+
+.home {
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+    background-image: linear-gradient(to right, white, rgba(255, 255, 255, 0.3)),
+      url("../../assets/Images/wood-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include tablet {
+      background-image: none;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-text {
+      padding-left: 1rem;
+
+      @include tablet {
+        padding-left: 3rem;
+        max-width: 43%;
+      }
+
+      @include desktop {
+        padding-left: 4rem;
+        max-width: 35%;
+      }
+    }
+
+    &-title {
+      font-size: 2.5rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+
+      @include tablet {
+        font-size: 3.5rem;
+      }
+    }
+
+    &-description {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+
+      @include tablet {
+        font-size: 1.3rem;
+      }
+
+      @include desktop {
+        font-size: 1.4;
+      }
+    }
+
+    &-button {
+      padding: 0.75rem 1rem;
+      background-color: $primary-text-color;
+      color: $secondary-text-color;
+      border: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &-image {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+
+      @include tablet {
+        max-height: 500px;
+      }
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    gap: 1rem;
+    padding: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    @include desktop {
+      padding: 2rem;
+    }
+
+    &-card1,
+    &-card2,
+    &-card3 {
+      background-size: cover;
+      background-position: center;
+      height: 12.5rem;
+      position: relative;
+
+      @include tablet {
+        height: 25rem;
+        flex: 1 1 0;
+      }
+    }
+
+    &-card1 {
+      background-image: url("../../assets/Images/wood-2.jpg");
+    }
+    &-card2 {
+      background-image: url("../../assets/Images/wood-3.jpg");
+    }
+    &-card3 {
+      background-image: url("../../assets/Images/wood-4.jpg");
+    }
+
+    &-label {
+      display: block;
+      text-align: center;
+      background: $primary-text-color;
+      color: $secondary-text-color;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 2rem;
+      background: linear-gradient(rgba(0, 0, 0, 0.7));
+
+      @include tablet {
+        font-size: 2rem;
+        bottom: -9rem;
+      }
+    }
+  }
+
+  &__discount {
+    margin: 2rem 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background: #ebebeb;
+
+    @include tablet {
+        margin-top: 12rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-image {
+      width: 100%;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &-text {
+      @include tablet {
+        padding-left: 3rem;
+        max-width: 53%;
+        align-items: center;
+      }
+
+      @include desktop {
+        padding-left: 4rem;
+      }
+    }
+
+    &-title {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+
+      @include tablet {
+        font-size: 3.5rem;
+      }
+    }
+
+    &-description {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+
+      @include tablet {
+        font-size: 1.6rem;
+      }
+
+      @include desktop {
+        font-size: 1.7rem;
+      }
+    }
+
+    &-button {
+      padding: 0.75rem 1rem;
+      background-color: $primary-text-color;
+      color: $secondary-text-color;
+      border: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  &__contact {
+    padding: 2rem;
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    &-fence {
+        display: flex;
+        flex-direction: column;
+       gap: 1.25rem;
+
+       @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5rem;
+       }
+    }
+
+    &-block {
+      text-align: center;
+    }
+
+    &-label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &-icon {
+      width: 1.5rem;
+      height: auto;
+    }
+
+    &-heading {
+      font-size: 1.25rem;
+      font-weight: bold;
+
+      @include tablet {
+        font-size: 1.75rem;
+      }
+
+      @include desktop {
+        font-size: 2rem;
+      }
+    }
+
+    &-text {
+      margin: 0.3rem 0;
+      font-size: 1rem;
+
+      @include tablet {
+        font-size: 1.4rem;
+      }
+
+      @include desktop {
+        font-size: 1.8rem;
+      }
+    }
+
+    &-socials {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+  }
+
+  &__social-icon {
+    width: 2rem;
+    height: auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

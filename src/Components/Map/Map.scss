@@ -1,0 +1,17 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/margin" as *;
+@use "../../Styles/variables" as *;
+
+
+.map {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 2rem;
+
+    & iframe {
+      width: 100%;
+      height: 20rem;
+      border: none;
+      display: block;
+    }
+  }
