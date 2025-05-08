@@ -1,0 +1,298 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/margin" as *;
+@use "../../Styles/variables" as *;
+
+.about {
+  &__intro {
+    background-image: url("../../assets/Images/wood-6.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      height: 30rem;
+    }
+  }
+
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      font-size: 1.7rem;
+    }
+
+    @include desktop {
+      font-size: 2rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: $primary-text-color;
+
+    @include tablet {
+      font-size: 1.4rem;
+    }
+
+    @include desktop {
+      font-size: 1.7rem;
+    }
+
+    &--about {
+      font-weight: bold;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 1rem;
+    padding-bottom: 0;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+
+    @include tablet {
+      width: 35%;
+      font-size: 1.7rem;
+    }
+
+    @include desktop {
+      width: 40%;
+      font-size: 3.4rem;
+    }
+  }
+
+  &__description {
+    line-height: 1.3;
+
+    @include tablet {
+      width: 65%;
+      font-size: 1.2rem;
+    }
+
+    @include desktop {
+      width: 60%;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 12.5rem;
+    padding: 0;
+    margin: 0 auto;
+
+    @include tablet {
+      height: 18rem;
+    }
+
+    @include desktop {
+      height: 25rem;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: #f1f1ef;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 6rem 2rem;
+    }
+
+    @include desktop {
+      justify-content: space-evenly;
+      padding: 6rem 6rem;
+    }
+  }
+
+  &__stat {
+    padding: 3rem;
+    text-align: center;
+    background: $secondary-text-color;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      flex: 1 1 30%;
+    }
+
+    @include desktop {
+      flex: 1 1 30%;
+    }
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__count {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.75rem;
+  }
+
+  &__label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #111;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+  }
+
+  &__team {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    margin: 0 auto;
+    position: relative;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 3rem;
+    }
+
+    @include desktop {
+      justify-content: space-evenly;
+      padding: 4rem;
+    }
+  }
+
+  &__member {
+    width: 100%;
+    height: 300px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include tablet {
+      flex: 1 1 40%;
+    }
+
+    @include desktop {
+      flex: 1 1 30%;
+    }
+
+    &-0 {
+      background-image: url("../../assets/Images/staff-1.jpg");
+    }
+    &-1 {
+      background-image: url("../../assets/Images/staff-2.jpg");
+    }
+    &-2 {
+      background-image: url("../../assets/Images/staff-3.jpg");
+    }
+    &-3 {
+      background-image: url("../../assets/Images/staff-4.jpg");
+    }
+    &-4 {
+      background-image: url("../../assets/Images/staff-5.jpg");
+    }
+    &-5 {
+      background-image: url("../../assets/Images/staff-6.jpg");
+    }
+
+    &-name {
+      font-size: 1rem;
+
+      @include tablet {
+        font-size: 1.2rem;
+      }
+    }
+
+    &-role {
+      white-space: nowrap;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+
+      @include tablet {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &__container {
+    background: $secondary-text-color;
+    width: 50%;
+    padding: 1rem;
+  }
+
+  &__cta {
+    background-image: url("../../assets/Images/wood-8.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 23rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      height: 30rem;
+    }
+
+    &-container {
+      text-align: center;
+      height: 15rem;
+      padding: 3rem;
+      background: $secondary-text-color;
+      margin: auto 0;
+    }
+
+    &-heading {
+      align-self: center;
+      margin-bottom: 0.5rem;
+    }
+
+    &-links {
+        background: $primary-text-color;
+        padding: 1rem 0;
+        margin-top: 2rem;  
+    }
+
+    &-link {
+        text-decoration: none;
+        color: $secondary-text-color;
+    }
+  }
+}
