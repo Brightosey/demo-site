@@ -44,6 +44,7 @@ function CollectionPage() {
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showAnimation, setShowAnimation] = useState(false);
 
   return (
     <section className="collection">
@@ -68,7 +69,14 @@ function CollectionPage() {
           {sections.map((section, index) => (
             <button
               key={index}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => {
+                if (index === activeIndex) {
+                  setShowAnimation(false);
+                } else {
+                  setActiveIndex(index);
+                  setShowAnimation(true);
+                }
+              }}
               className={`collection__tab ${
                 index === activeIndex ? "collection__tab--active" : ""
               }`}
@@ -84,7 +92,8 @@ function CollectionPage() {
               src={img}
               alt={`collection-${idx}`}
               key={idx}
-              className="collection__image"
+              className={`collection__image ${showAnimation ? "collection__image--animate" : ""}`}
+              onClick={() => setShowAnimation(false)}
             />
           ))}
         </div>

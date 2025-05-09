@@ -53,4 +53,92 @@
       text-decoration: underline;
     }
   }
+
+  &__content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__tab {
+    padding: 1rem;
+    background-color: $secondary-text-color;
+    border: 1px solid $primary-text-color;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-text-color;
+    }
+
+    &--active {
+      background-color: $primary-text-color;
+      color: $secondary-text-color;
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__image {
+    width: 100%; // 🔹 Full width on mobile
+    max-width: 427px; // Optional: limit max width
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+
+    @include tablet {
+      flex: 1 1 45%; // 🔹 Two per row on tablet
+      /* max-width: 45%; */
+    }
+
+    @include desktop {
+      flex: 1 1 30%; // 🔹 Three per row on desktop
+      /*  max-width: 30%; */
+    }
+
+    &--animate {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+  }
+
+  // Optional fade-in animation
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.5s ease;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
