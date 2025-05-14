@@ -37,7 +37,7 @@ function ProductionPage() {
         <div className="production__block">
           <div className="production__text">
             <h1 className="production__heading">10% Discount</h1>
-            <p className="production__paragraph">
+            <p className="production__paragraph1">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
               eos, voluptatem, et sequi distinctio adipisci omnis in error quas
               fuga tempore fugit incidunt quos.
@@ -72,7 +72,7 @@ function ProductionPage() {
         <div className="production__block">
           <div className="production__text">
             <h1 className="production__heading">Manufacturing</h1>
-            <p className="production__paragraph">
+            <p className="production__paragraph1">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
               eos, voluptatem, et sequi distinctio adipisci omnis in error quas
               fuga tempore fugit incidunt quos.
