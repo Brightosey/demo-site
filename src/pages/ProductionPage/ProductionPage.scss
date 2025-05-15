@@ -24,11 +24,11 @@
     margin-bottom: 0.5rem;
 
     @include tablet {
-      font-size: 2rem;
+      font-size: 3rem;
     }
 
     @include desktop {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
     }
   }
 
@@ -38,11 +38,11 @@
     color: $primary-text-color;
 
     @include tablet {
-      font-size: 1.4rem;
+      font-size: 2rem;
     }
 
     @include desktop {
-      font-size: 1.7rem;
+      font-size: 2.5rem;
     }
 
     &--about {
@@ -54,119 +54,127 @@
     }
   }
 
-  /*  &__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2.5rem auto;
+  &__description {
+    margin: 3rem 0;
+    padding: 1rem;
   }
 
   &__paragraph {
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.85rem;
+    margin: auto 0;
 
     @include tablet {
-        font-size: 1.1rem;
+      font-size: 1.5rem;
     }
+  }
 
-    @include desktop {
-        font-size: 1.3rem;
-        padding: 2rem;
-    }
+  &__wall {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 1px solid #ddd;
+    margin: 2rem 0;
+    background: #ebebeb;
   }
 
   &__block {
     display: flex;
-    flex-direction: column-reverse;
-    padding: 1rem;
-
-    @include tablet {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-  }
-
-  &__text {
-    text-align:left;
-
-    @include tablet {
-        width: 70%;
-        justify-content: center;
-        align-items: center;
-    }
-  }
-
-  &__heading {
-    margin: 1rem 0;
-  }
-
-  &__paragraph1 {
-    margin-bottom: 1rem;
-  }
-
-  &__list {
-    padding-left: 1rem;
-    list-style-type:disclosure-closed;
-  }
-
-  &__item {
-    margin-bottom: 0.5rem;
-  } */
-
-  &__block {
-    display: flex;
-    flex-direction: column-reverse;
+    flex-direction:column-reverse;
+    background: #ebebeb;
+    overflow: hidden;
     padding: 1rem;
 
     @include tablet {
       flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0;
+
+      &--1 {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
     }
   }
 
   &__text {
-    width: 100%;
     padding: 1rem;
-    background-color: #f7f7f7;
+    flex: 1;
 
     @include tablet {
-      width: 50%;
+      padding: 1.5rem;
     }
   }
 
   &__heading {
     font-size: 1.5rem;
-    font-weight: bold;
     margin-bottom: 1rem;
+    font-weight: bold;
+
+    @include tablet {
+      font-size: 1.7rem;
+    }
+
+    @include desktop {
+      font-size: 2rem;
+    }
   }
 
   &__paragraph1 {
+    font-size: 1rem;
     margin-bottom: 1rem;
-    color: #333;
+    line-height: 1.6;
+
+    @include tablet {
+      font-size: 1.3rem;
+    }
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
   }
 
   &__list {
-    list-style-type: disclosure-closed;
-    padding-left: 1rem;
+    padding-left: 1.2rem;
+    list-style-type: disc;
+
+    @media (min-width: 768px) {
+      padding-left: 1.5rem;
+    }
   }
 
   &__item {
     margin-bottom: 0.5rem;
-    color: #555;
+    font-size: 0.95rem;
+
+    @include tablet {
+      font-size: 1.2rem;
+    }
+
+    @include desktop {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__figure {
+    flex: 1;
+
+    /*     img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    } */
   }
 
   &__image {
+    border-left: none;
     width: 100%;
-    max-width: 500px;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    display: block;
 
     @include tablet {
-      width: 50%;
+      border-left: 1px solid #ddd;
     }
   }
 }

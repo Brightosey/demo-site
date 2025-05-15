@@ -6,7 +6,11 @@
 .map {
     width: 100%;
     margin: 1rem 0;
-    padding: 2rem;
+    padding: 1rem;
+
+    @include tablet {
+        padding: 2rem;
+    }
 
     & iframe {
       width: 100%;

@@ -12,29 +12,26 @@ function ContactPage() {
   const [captchaValue, setCaptchaValue] = useState("");
   const [captchaImgUrl, setCaptchaImgUrl] = useState("/captcha.png");
 
-  function handleSubject(event) {
-    setSubject(event.target.value);
-  }
+  function handleSubmit(event) {
+    event.preventDefault();
 
-  function handleName(event) {
-    setName(event.target.value);
-  }
+    if (!isEmailValid(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
 
-  function handlePhone(event) {
-    setPhone(event.target.value);
-  }
+    if (!isPhoneValid(phone)) {
+      alert("Please enter a valid phone number.");
+      return;
+    }
 
-  function handleEmail(event) {
-    setEmail(event.target.value);
-  }
+    if (!captchaValue) {
+      alert("Please enter the captcha.");
+      return;
+    }
 
-  function handleMessage(event) {
-    setMessage(event.target.value);
+    alert("Form submitted successfully!");
   }
-
-  const handleChange = (event) => {
-    setCaptchaValue(event.target.value);
-  };
 
   const refreshCaptcha = () => {
     const timestamp = new Date().getTime();
@@ -42,43 +39,17 @@ function ContactPage() {
   };
 
   function isEmailValid(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
   function isPhoneValid(phone) {
-    const regex = /^\+?[0-9\s\-()]{7,15}$/;
-    return regex.test(phone);
-  }
-
-  function isFormValid() {
-    return (
-      subject && name && message && isEmailValid(email) && isPhoneValid(phone)
-    );
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (!isEmailValid(email)) {
-      alert("Please enter a valid email address");
-      return;
-    }
-    if (!isPhoneValid(phone)) {
-      alert("Please enter a valid phone number");
-      return;
-    }
-    if (!captchaValue) {
-      alert("Please enter the captcha value.");
-      return;
-
-      alert(`Entered Captcha: ${captchaValue}`);
-    }
+    return /^\+?[0-9\s\-()]{7,15}$/.test(phone);
   }
 
   return (
     <section className="contact">
       <article className="contact__intro">
-        <h1 className="contact__title">Our contact</h1>
+        <h1 className="contact__title">Our Contact</h1>
         <div className="contact__breadcrumbs">
           <Link to="/" className="contact__link">
             Home
@@ -90,72 +61,91 @@ function ContactPage() {
         </div>
       </article>
 
-      <article>
-        <form onSubmit={handleSubmit}>
-          <div>
+      <article className="contact__form-wrapper">
+        <form onSubmit={handleSubmit} className="contact__form">
+          <div className="contact__row">
             <input
+              className="contact__input"
               type="text"
               name="subject"
               value={subject}
               placeholder="Subject"
-              onChange={handleSubject}
+              onChange={(e) => setSubject(e.target.value)}
               required
             />
             <input
+              className="contact__input"
               type="text"
               name="name"
               value={name}
               placeholder="Name"
-              onChange={handleName}
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
-          <div>
+
+          <div className="contact__row">
             <input
-              type="number"
+              className="contact__input"
+              type="text"
               name="phone"
               value={phone}
               placeholder="Phone"
-              onChange={handlePhone}
+              onChange={(e) => setPhone(e.target.value)}
               required
             />
             <input
+              className="contact__input"
               type="email"
               name="email"
               value={email}
               placeholder="Email"
-              onChange={handleEmail}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
+
           <textarea
+            className="contact__textarea"
             name="message"
             value={message}
-            type="text"
-            onChange={handleMessage}
+            placeholder="Message"
+            onChange={(e) => setMessage(e.target.value)}
             required
-          ></textarea>
-          <div>
-            <div>
-              <label>
-                <input type="checkbox" id="optInCheckbox" />
-                <Link to="/policy">
-                  I have read and understand the privacy policy.
-                </Link>
-              </label>
-              <div>
-                <input
-                  type="text"
-                  id="captcha"
-                  value={captchaValue}
-                  placeholder="Captcha"
-                  onChange={handleChange}
-                  required
-                />
-                <img src={Refresh} alt="refresh" />
-              </div>
+          />
+
+          <div className="contact__row">
+            <div className="contact__captcha-row">
+            <label className="contact__checkbox">
+              <input type="checkbox" required />
+              <span>
+                I have read and understand the{" "}
+                <Link to="/policy">privacy policy</Link>.
+              </span>
+            </label>
+
+            <div className="contact__captcha">
+              <input
+                type="text"
+                placeholder="Captcha"
+                value={captchaValue}
+                onChange={(e) => setCaptchaValue(e.target.value)}
+                required
+                className="contact__input1"
+              />
+              <img
+                src={Refresh}
+                alt="captcha"
+                onClick={refreshCaptcha}
+                className="contact__refresh"
+                title="Click to refresh"
+              />
             </div>
-            <button type="submit">Submit</button>
+            </div>
+
+            <button type="submit" className="contact__submit">
+              Submit
+            </button>
           </div>
         </form>
       </article>

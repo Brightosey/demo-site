@@ -3,55 +3,199 @@
 @use "../../Styles/variables" as *;
 
 .contact {
-    &__intro {
-        background-image: url("../../assets/Images/wood-6.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    
-        @include tablet {
-          height: 30rem;
-        }
-      }
-    
-    
-      &__title {
+  &__intro {
+    background-image: url("../../assets/Images/wood-6.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      height: 30rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      font-size: 3rem;
+    }
+
+    @include desktop {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: $primary-text-color;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      font-size: 2.5rem;
+    }
+
+    &--about {
+      font-weight: bold;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__separator {
+    margin: 0 0.5rem;
+  }
+
+  &__form-wrapper {
+    background-color: #f9f9f9;
+    padding: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    @include tablet {
+        flex-direction: row;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-bottom: 1px solid $primary-text-color;
+    font-size: 1rem;
+    width: 100%;
+
+    &.active {
+        border-top: 1px solid $primary-text-color;
+    }
+
+    @include tablet {
         font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    
-        @include tablet {
-          font-size: 1.7rem;
-        }
-    
-        @include desktop {
-          font-size: 2rem;
-        }
+    }
+
+    @include desktop {
+        font-size: 2rem;
+    }
+  }
+
+
+  &__captcha-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    width: auto;
+
+    input {
+      margin-right: 0.5rem;
+    }
+
+    a {
+      color: #0073e6;
+      text-decoration: underline;
+
+      &:hover {
+        color: #004a99;
       }
-    
-      &__link {
-        text-decoration: none;
-        font-size: 1.2rem;
-        color: $primary-text-color;
-    
-        @include tablet {
-          font-size: 1.4rem;
-        }
-    
-        @include desktop {
-          font-size: 1.7rem;
-        }
-    
-        &--about {
-          font-weight: bold;
-        }
-    
-        &:hover {
-          text-decoration: underline;
-        }
+    }
+
+    @include tablet {
+        font-size: 1.5rem;
+    }
+
+    @include desktop {
+        font-size: 2rem;
+    }
+  }
+
+  &__captcha {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+
+    img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(30deg) scale(1.1);
       }
+    }
+  }
+
+  &__input1 {
+    padding: 0.4rem;
+    border: none;
+    font-size: 1rem;
+    border-bottom: 1px solid $primary-text-color;
+
+    @include tablet {
+        font-size: 1.5rem;
+    }
+
+    @include desktop {
+        font-size: 2rem;
+    }
+  }
+
+  &__submit {
+    padding: 0.7rem 10rem;
+    background-color: $primary-text-color;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s;
+    display: flex;
+    flex: 1;
+    text-align: center;
+
+    &:hover {
+      background-color: #444;
+    }
+
+    @include tablet {
+        font-size: 1.5rem;
+    }
+
+    @include desktop {
+        font-size: 2rem;
+    }
+  }
 }

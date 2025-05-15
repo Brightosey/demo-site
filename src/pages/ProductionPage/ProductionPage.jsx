@@ -34,74 +34,76 @@ function ProductionPage() {
       </article>
 
       <article>
-        <div className="production__block">
-          <div className="production__text">
-            <h1 className="production__heading">10% Discount</h1>
-            <p className="production__paragraph1">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
-              eos, voluptatem, et sequi distinctio adipisci omnis in error quas
-              fuga tempore fugit incidunt quos.
-            </p>
-            <ul className="production__list">
-              <li className="production__item">
-                Atque, debitis architecto ducimus eligendi dignissimos
-              </li>
-              <li className="production__item">
-                Atque, debitis architecto ducimus eligendi dignissimos
-              </li>
-              <li className="production__item">
-                Fugit sit atque eaque dolorum autem reprehenderit
-              </li>
-              <li className="production__item">
-                Porro omnis obcaecati laborum obcaecati
-              </li>
-              <li className="production__item">
-                Laboriosam deserunt harum libero a voluptatem
-              </li>
-            </ul>
+        <div className="production__wall">
+          <div className="production__block">
+            <div className="production__text">
+              <h1 className="production__heading">10% Discount</h1>
+              <p className="production__paragraph1">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
+                eos, voluptatem, et sequi distinctio adipisci omnis in error
+                quas fuga tempore fugit incidunt quos.
+              </p>
+              <ul className="production__list">
+                <li className="production__item">
+                  Atque, debitis architecto ducimus eligendi dignissimos
+                </li>
+                <li className="production__item">
+                  Atque, debitis architecto ducimus eligendi dignissimos
+                </li>
+                <li className="production__item">
+                  Fugit sit atque eaque dolorum autem reprehenderit
+                </li>
+                <li className="production__item">
+                  Porro omnis obcaecati laborum obcaecati
+                </li>
+                <li className="production__item">
+                  Laboriosam deserunt harum libero a voluptatem
+                </li>
+              </ul>
+            </div>
+            <figure className="production__figure">
+              <img
+                src={carpenter1}
+                alt="carpenter"
+                className="production__image"
+              />
+            </figure>
           </div>
-          <figure className="production__figure">
-            <img
-              src={carpenter1}
-              alt="carpenter"
-              className="production__image"
-            />
-          </figure>
-        </div>
 
-        <div className="production__block">
-          <div className="production__text">
-            <h1 className="production__heading">Manufacturing</h1>
-            <p className="production__paragraph1">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
-              eos, voluptatem, et sequi distinctio adipisci omnis in error quas
-              fuga tempore fugit incidunt quos.
-            </p>
-            <ul className="production__list">
-              <li className="production__item">
-                Atque, debitis architecto ducimus eligendi dignissimos
-              </li>
-              <li className="production__item">
-                Modi ut non officiis repudiandae maiores
-              </li>
-              <li className="production__item">
-                Fugit sit atque eaque dolorum autem reprehenderit
-              </li>
-              <li className="production__item">
-                Fugit sit atque eaque dolorum autem reprehenderit
-              </li>
-              <li className="production__item">
-                Fugit sit atque eaque dolorum autem reprehenderit
-              </li>
-            </ul>
+          <div className="production__block production__block--1">
+            <div className="production__text">
+              <h1 className="production__heading">Manufacturing</h1>
+              <p className="production__paragraph1">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
+                eos, voluptatem, et sequi distinctio adipisci omnis in error
+                quas fuga tempore fugit incidunt quos.
+              </p>
+              <ul className="production__list">
+                <li className="production__item">
+                  Atque, debitis architecto ducimus eligendi dignissimos
+                </li>
+                <li className="production__item">
+                  Modi ut non officiis repudiandae maiores
+                </li>
+                <li className="production__item">
+                  Fugit sit atque eaque dolorum autem reprehenderit
+                </li>
+                <li className="production__item">
+                  Fugit sit atque eaque dolorum autem reprehenderit
+                </li>
+                <li className="production__item">
+                  Fugit sit atque eaque dolorum autem reprehenderit
+                </li>
+              </ul>
+            </div>
+            <figure className="production__figure">
+              <img
+                src={carpenter2}
+                alt="carpenter"
+                className="production__image"
+              />
+            </figure>
           </div>
-          <figure className="production__figure">
-            <img
-              src={carpenter2}
-              alt="carpenter"
-              className="production__image"
-            />
-          </figure>
         </div>
       </article>
     </section>
