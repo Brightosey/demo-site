@@ -3,54 +3,162 @@
 @use "../../Styles/variables" as *;
 
 .faq {
-    &__intro {
-        background-image: url("../../assets/Images/wood-6.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    
-        @include tablet {
-          height: 30rem;
-        }
-      }
-    
-      &__title {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    
-        @include tablet {
-          font-size: 2rem;
-        }
-    
-        @include desktop {
-          font-size: 2.5rem;
-        }
-      }
-    
-      &__link {
-        text-decoration: none;
-        font-size: 1.2rem;
-        color: $primary-text-color;
-    
-        @include tablet {
-          font-size: 1.4rem;
-        }
-    
-        @include desktop {
-          font-size: 1.7rem;
-        }
-    
-        &--about {
-          font-weight: bold;
-        }
-    
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+  &__intro {
+    background-image: url("../../assets/Images/wood-6.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      height: 30rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: $primary-text-color;
+
+    @include tablet {
+      font-size: 1.4rem;
+    }
+
+    @include desktop {
+      font-size: 1.7rem;
+    }
+
+    &--about {
+      font-weight: bold;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__section {
+    margin-bottom: 2.5rem;
+    padding: 1rem;
+    margin: 2rem 0;
+  }
+
+  &__section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
+  }
+
+  &__item {
+    border: 1px solid $primary-text-color;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      background: $primary-text-color;
+      color: $secondary-text-color;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &__header {
+    background-color: $secondary-text-color;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+
+    &:hover {
+      background: $primary-text-color;
+    }
+  }
+
+  &__question {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  &__icon {
+    font-size: 1.2rem;
+    color: $primary-text-color;
+    transition: transform 0.3s;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__item.active &__icon {
+    transform: rotate(45deg);
+  }
+
+  &__content {
+    padding: 1rem;
+    background-color: $secondary-text-color;
+    font-size: 0.95rem;
+    color: $primary-text-color;
+    line-height: 1.5;
+  }
+
+  &__footer {
+    background-image: url("../../assets/Images/wood-8.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 23rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      height: 30rem;
+    }
+
+    &-container {
+      text-align: center;
+      height: 15rem;
+      padding: 3rem;
+      background: $secondary-text-color;
+      margin: auto 0;
+    }
+
+    &-heading {
+      align-self: center;
+      margin-bottom: 0.5rem;
+    }
+
+    &-links {
+      background: $primary-text-color;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $secondary-text-color;
+    }
+  }
 }
