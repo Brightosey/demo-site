@@ -14,7 +14,7 @@ function Header() {
   }
 
   return (
-    <header className="header">
+    <header className="header" id="header">
       <div className="header__logo">
         <Link to="/" className="header__Link">
           <h1 className="header__title">HANDMADE</h1>

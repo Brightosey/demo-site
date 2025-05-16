@@ -54,6 +54,11 @@
     }
   }
 
+  &__separator {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
   &__content {
     padding: 2rem;
     max-width: 1200px;

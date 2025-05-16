@@ -54,7 +54,7 @@ function CollectionPage() {
           <Link to="/" className="collection__link">
             Home
           </Link>
-          <strong className="collection__separator"> / </strong>
+          <span className="collection__separator"> / </span>
           <a
             href="#collection"
             className="collection__link collection__link--active"
