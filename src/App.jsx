@@ -6,22 +6,13 @@ import ProductionPage from "./pages/ProductionPage/ProductionPage";
 import FaqPage from "./pages/FaqPage/FaqPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Policy from "./Components/Policy/Policy";
+import ScrollToTopButton from "./Hook/ScrollButton/ScrollButton";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Map from "./Components/Map/Map";
 import Contact from "./Components/Contact/Contact";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [showButton, setShowButton] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowButton(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <BrowserRouter>
       <Header />
@@ -36,17 +27,7 @@ function App() {
       </Routes>
       <Contact />
       <Map />
-
-      {showButton ? (
-        <a
-          onClick={() => window.scrollTo(0, 0)}
-          style={{ position: "fixed", right: "15px", bottom: "15px" }}
-        >
-          to Top
-        </a>
-      ) : (
-        ""
-      )}
+      <ScrollToTopButton />
     </BrowserRouter>
   );
 }

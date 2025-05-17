@@ -74,6 +74,7 @@
 
   &__list {
     list-style: none;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
