@@ -6,7 +6,8 @@ import ProductionPage from "./pages/ProductionPage/ProductionPage";
 import FaqPage from "./pages/FaqPage/FaqPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Policy from "./Components/Policy/Policy";
-import ScrollToTopButton from "./Hook/ScrollButton/ScrollButton";
+import ScrollButton from "./Hook/ScrollButton/ScrollButton";
+import ScrollToTop from "./Hook/ScrollToTop/ScrollToTop";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Map from "./Components/Map/Map";
 import Contact from "./Components/Contact/Contact";
@@ -27,7 +28,8 @@ function App() {
       </Routes>
       <Contact />
       <Map />
-      <ScrollToTopButton />
+      <ScrollButton />
+      <ScrollToTop />
     </BrowserRouter>
   );
 }
