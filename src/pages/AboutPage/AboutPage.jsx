@@ -29,7 +29,7 @@ function AboutPage() {
         <h1 className="about__title">About Handmade</h1>
         <div className="about__breadcrumbs">
           <Link to="/" className="about__link">Home</Link>
-          <strong> / </strong>
+          <strong className="about__separator"> / </strong>
           <a href="#about" className="about__link about__link--about">About Us</a>
         </div>
       </article>

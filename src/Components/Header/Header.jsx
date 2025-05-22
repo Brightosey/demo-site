@@ -9,10 +9,6 @@ import twitter from "../../assets/Icon/twitter.png";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  function toggleMenu() {
-    setIsOpen((prev) => !prev);
-  }
-
   return (
     <header className="header" id="header">
       <div className="header__logo">
@@ -22,7 +18,7 @@ function Header() {
       </div>
 
       <div className="header__menu-container">
-        <button className="header__menu-toggle" onClick={toggleMenu}>
+        <button className="header__menu-toggle" onClick={() => setIsOpen((prev) => !prev)}>
           {isOpen ? (
             <X className="header__icon" />
           ) : (

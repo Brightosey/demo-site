@@ -77,13 +77,13 @@ function FaqPage() {
     },
   ];
 
-  function toggleSection(index, activeIndex, setActiveIndex) {
+ /*  function toggleSection(index, activeIndex, setActiveIndex) {
     if (index === activeIndex) {
       setActiveIndex(null);
     } else {
       setActiveIndex(index);
     }
-  }
+  } */
 
   return (
     <section className="faq">
@@ -110,7 +110,7 @@ function FaqPage() {
               <div
                 className="faq__header"
                 onClick={() =>
-                  toggleSection(index, activeFurniture, setActiveFuniture)
+                  setActiveFuniture(activeFurniture === index ? null : index)
                 }
               >
                 <h3 className="faq__question">{item.title}</h3>
@@ -136,7 +136,7 @@ function FaqPage() {
               <div
                 className="faq__header"
                 onClick={() =>
-                  toggleSection(index, activePayment, setActivePayment)
+                  setActivePayment(activePayment === index ? null : index)
                 }
               >
                 <h3 className="faq__question">{item.title}</h3>
@@ -162,7 +162,7 @@ function FaqPage() {
               <div
                 className="faq__header"
                 onClick={() =>
-                  toggleSection(index, activeGeneral, setActiveGeneral)
+                 setActiveGeneral(activeGeneral === index ? null : index)
                 }
               >
                 <h3 className="faq__question">{item.title}</h3>

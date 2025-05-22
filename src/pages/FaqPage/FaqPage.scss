@@ -54,6 +54,11 @@
     }
   }
 
+  &__separator {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
   &__section {
     margin-bottom: 2.5rem;
     padding: 1rem;
@@ -114,25 +119,7 @@
         font-size: 1.4rem;
     }
   }
-/* 
-  &__icon {
-    font-size: 1.2rem;
-    color: $primary-text-color;
-    transition: transform 0.3s;
 
-    svg {
-        stroke: currentColor;
-        transition: stroke 0.3s;
-      }
-
-    &:hover {
-      color: white;
-
-      svg {
-        stroke: currentColor;
-      }
-    }
-  } */
 
   .faq__icon {
     font-size: 1.2rem;
